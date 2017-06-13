@@ -242,6 +242,7 @@
 				TargetAttributes = {
 					EA2448B01ECB785F004F1568 = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 5W82EJ3KDW;
 						ProvisioningStyle = Automatic;
 					};
 					EA2448C71ECB785F004F1568 = {
@@ -602,10 +603,10 @@
 			baseConfigurationReference = 3A82E96368C8D48C419BA24B /* Pods-VDMChat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 5W82EJ3KDW;
 				INFOPLIST_FILE = VDMChat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.vidao.interview.chat.VDMChat;
+				PRODUCT_BUNDLE_IDENTIFIER = com.makoto.chat.VDMChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -616,10 +617,10 @@
 			baseConfigurationReference = B149F1068597BFFCF7F41CEF /* Pods-VDMChat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 5W82EJ3KDW;
 				INFOPLIST_FILE = VDMChat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.vidao.interview.chat.VDMChat;
+				PRODUCT_BUNDLE_IDENTIFIER = com.makoto.chat.VDMChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
