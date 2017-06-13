@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0EFB1FDB1EEFBD880046818E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0EFB1FDA1EEFBD880046818E /* GoogleService-Info.plist */; };
+		0EFB1FDC1EEFBD880046818E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0EFB1FDA1EEFBD880046818E /* GoogleService-Info.plist */; };
+		0EFB1FDD1EEFBD880046818E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0EFB1FDA1EEFBD880046818E /* GoogleService-Info.plist */; };
 		3D8368E419674AB6CAC0A925 /* Pods_VDMChatTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95E4EBC0C890A98DD449A35E /* Pods_VDMChatTests.framework */; };
 		CE91E8A7C3024E7FA9C12426 /* Pods_VDMChatUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88ACEE220123A3A6A4B8864 /* Pods_VDMChatUITests.framework */; };
 		EA2448B51ECB785F004F1568 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2448B41ECB785F004F1568 /* AppDelegate.swift */; };
@@ -37,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0EFB1FDA1EEFBD880046818E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3A82E96368C8D48C419BA24B /* Pods-VDMChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VDMChat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VDMChat/Pods-VDMChat.debug.xcconfig"; sourceTree = "<group>"; };
 		57FB26873C4A0A4B922003A4 /* Pods-VDMChatUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VDMChatUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VDMChatUITests/Pods-VDMChatUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		84C96325C8F80C9067B60EC8 /* Pods-VDMChatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VDMChatTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VDMChatTests/Pods-VDMChatTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -130,6 +134,7 @@
 				EA2448B41ECB785F004F1568 /* AppDelegate.swift */,
 				EA2448B81ECB785F004F1568 /* Main.storyboard */,
 				EA2448BE1ECB785F004F1568 /* Assets.xcassets */,
+				0EFB1FDA1EEFBD880046818E /* GoogleService-Info.plist */,
 				EA2448C01ECB785F004F1568 /* LaunchScreen.storyboard */,
 				EA2448C31ECB785F004F1568 /* Info.plist */,
 				EA2448BB1ECB785F004F1568 /* VDMChat.xcdatamodeld */,
@@ -283,6 +288,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA2448C21ECB785F004F1568 /* LaunchScreen.storyboard in Resources */,
+				0EFB1FDB1EEFBD880046818E /* GoogleService-Info.plist in Resources */,
 				EA2448BF1ECB785F004F1568 /* Assets.xcassets in Resources */,
 				EA2448BA1ECB785F004F1568 /* Main.storyboard in Resources */,
 			);
@@ -292,6 +298,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EFB1FDC1EEFBD880046818E /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +306,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EFB1FDD1EEFBD880046818E /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -663,7 +671,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = VDMChatUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.vidao.interview.chat.VDMChatUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.makoto.chat.VDMChatUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = VDMChat;
@@ -677,7 +685,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = VDMChatUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.vidao.interview.chat.VDMChatUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.makoto.chat.VDMChatUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = VDMChat;
