@@ -13,16 +13,16 @@
         <scene sceneID="Qvb-6G-tIH">
             <objects>
                 <tableViewController id="lhr-Z3-2Ks" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="VIg-Xy-9FI">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="61" sectionHeaderHeight="28" sectionFooterHeight="28" id="VIg-Xy-9FI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="aHy-dH-NMy">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="61" id="aHy-dH-NMy">
+                                <rect key="frame" x="0.0" y="28" width="375" height="61"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aHy-dH-NMy" id="OJP-t2-IWK">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="60.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -32,11 +32,38 @@
                             <outlet property="delegate" destination="lhr-Z3-2Ks" id="j1A-9e-BEJ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="0Xa-54-wLj"/>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="XZC-yC-EjH"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b4X-cf-u2Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="sw1-hU-T1k">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
             </objects>
-            <point key="canvasLocation" x="-452" y="170"/>
+            <point key="canvasLocation" x="-722" y="835"/>
+        </scene>
+        <!--Chat Board View Controller-->
+        <scene sceneID="T70-HJ-7jg">
+            <objects>
+                <viewController id="gyo-qa-3hn" customClass="ChatBoardViewController" customModule="VDMChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rGR-W7-7Ig"/>
+                        <viewControllerLayoutGuide type="bottom" id="hDV-4M-aDf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PCa-Nl-2M2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="m3r-K9-JSE"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fHs-pX-WrZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-252" y="170"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="C8y-h5-Dck">
@@ -47,7 +74,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="lhr-Z3-2Ks" kind="relationship" relationship="rootViewController" id="ham-Y1-Mud"/>
+                        <segue destination="gyo-qa-3hn" kind="relationship" relationship="rootViewController" id="MjG-pv-4Np"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mrw-O3-Qex" userLabel="First Responder" sceneMemberID="firstResponder"/>
