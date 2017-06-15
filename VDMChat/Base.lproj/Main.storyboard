@@ -9,35 +9,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
-        <scene sceneID="Qvb-6G-tIH">
-            <objects>
-                <tableViewController id="lhr-Z3-2Ks" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="61" sectionHeaderHeight="28" sectionFooterHeight="28" id="VIg-Xy-9FI">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="61" id="aHy-dH-NMy">
-                                <rect key="frame" x="0.0" y="28" width="375" height="61"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aHy-dH-NMy" id="OJP-t2-IWK">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="60.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="lhr-Z3-2Ks" id="pUf-VQ-aM7"/>
-                            <outlet property="delegate" destination="lhr-Z3-2Ks" id="j1A-9e-BEJ"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="XZC-yC-EjH"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="b4X-cf-u2Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-722" y="835"/>
-        </scene>
         <!--Chat Board View Controller-->
         <scene sceneID="T70-HJ-7jg">
             <objects>
@@ -52,7 +23,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="m3r-K9-JSE">
-                        <barButtonItem key="rightBarButtonItem" title="Setting" id="1BP-mo-ZaP" userLabel="Setting"/>
+                        <barButtonItem key="backBarButtonItem" title="Back" id="98C-eq-ImM"/>
+                        <barButtonItem key="rightBarButtonItem" title="Setting" id="1BP-mo-ZaP" userLabel="Setting">
+                            <connections>
+                                <segue destination="xT9-cp-WCu" kind="show" id="YkR-Ui-AN2"/>
+                            </connections>
+                        </barButtonItem>
                         <connections>
                             <outlet property="rightBarButtonItem" destination="1BP-mo-ZaP" id="cjC-o9-a2g"/>
                         </connections>
@@ -60,7 +36,28 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fHs-pX-WrZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-252" y="170"/>
+            <point key="canvasLocation" x="-706" y="170"/>
+        </scene>
+        <!--Setting View Controller-->
+        <scene sceneID="j4k-1T-Kmk">
+            <objects>
+                <viewController id="xT9-cp-WCu" customClass="SettingViewController" customModule="VDMChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="R5z-it-XS8"/>
+                        <viewControllerLayoutGuide type="bottom" id="UHw-Ny-hvZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pj8-Ey-VQk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="TiU-WW-OOK">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="kKi-vW-I3Z"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gqh-Ma-aUp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="201" y="170"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="C8y-h5-Dck">

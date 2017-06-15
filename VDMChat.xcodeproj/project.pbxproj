@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0E9127E21EF1EF2D0039D433 /* ChatBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9127E11EF1EF2D0039D433 /* ChatBoardViewController.swift */; };
+		0E9127E41EF2DB4E0039D433 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9127E31EF2DB4E0039D433 /* SettingViewController.swift */; };
 		0EFB1FDB1EEFBD880046818E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0EFB1FDA1EEFBD880046818E /* GoogleService-Info.plist */; };
 		0EFB1FDC1EEFBD880046818E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0EFB1FDA1EEFBD880046818E /* GoogleService-Info.plist */; };
 		0EFB1FDD1EEFBD880046818E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0EFB1FDA1EEFBD880046818E /* GoogleService-Info.plist */; };
@@ -45,6 +46,7 @@
 
 /* Begin PBXFileReference section */
 		0E9127E11EF1EF2D0039D433 /* ChatBoardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatBoardViewController.swift; sourceTree = "<group>"; };
+		0E9127E31EF2DB4E0039D433 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		0EFB1FDA1EEFBD880046818E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0EFB1FDE1EF1D4D10046818E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0EFB1FE01EF1D4F40046818E /* GoogleToolboxForMac.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleToolboxForMac.framework; path = "../../../Library/Developer/Xcode/DerivedData/VDMChat-fjgvokxutfercyggimzffqwwufbg/Build/Products/Debug-iphonesimulator/GoogleToolboxForMac/GoogleToolboxForMac.framework"; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 			children = (
 				EA2448B41ECB785F004F1568 /* AppDelegate.swift */,
 				EA2448B81ECB785F004F1568 /* Main.storyboard */,
+				0E9127E31EF2DB4E0039D433 /* SettingViewController.swift */,
 				0E9127E11EF1EF2D0039D433 /* ChatBoardViewController.swift */,
 				EA2448BE1ECB785F004F1568 /* Assets.xcassets */,
 				0EFB1FDA1EEFBD880046818E /* GoogleService-Info.plist */,
@@ -479,6 +482,7 @@
 				EA2448BD1ECB785F004F1568 /* VDMChat.xcdatamodeld in Sources */,
 				EA2448B51ECB785F004F1568 /* AppDelegate.swift in Sources */,
 				0E9127E21EF1EF2D0039D433 /* ChatBoardViewController.swift in Sources */,
+				0E9127E41EF2DB4E0039D433 /* SettingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
