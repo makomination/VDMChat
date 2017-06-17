@@ -30,10 +30,9 @@ class ChatBoardViewController: UIViewController, UITextViewDelegate, UITableView
         //textArea initialization
         textArea.delegate = self
         textArea.textContainer.lineBreakMode = NSLineBreakMode.byWordWrapping
-        textArea.textContainer.maximumNumberOfLines = 8;
+        textArea.textContainer.maximumNumberOfLines = 8
         textArea.isScrollEnabled = true
-        let newPosition = textArea.beginningOfDocument
-        textArea.selectedTextRange = textArea.textRange(from: newPosition, to: newPosition)
+        
         //fetch data from Firebase
         let rootRef = Database.database().reference(withPath: GeneralManager.REF_ROOT_STRING);
         
@@ -59,6 +58,11 @@ class ChatBoardViewController: UIViewController, UITextViewDelegate, UITableView
         })
 
     }
+    
+    override func viewDidLayoutSubviews() {
+        textArea.setContentOffset(.zero, animated: false)
+    }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -88,19 +92,24 @@ class ChatBoardViewController: UIViewController, UITextViewDelegate, UITableView
     }
     
     func textViewDidChange(_ textView: UITextView){
-        //calculate number of lines
-        var numberOfLines = 0
-        numberOfLines = Int(textView.contentSize.height / (textView.font?.lineHeight)!)
-        //reset textView size
+        let numberOfLines = Int(textView.contentSize.height / (textView.font?.lineHeight)!)
         var frameRect:CGRect = textView.frame
+        
         if (numberOfLines <= 1){
             frameRect.size.height = 30.0
             
-        } else {
-            frameRect.size.height = 16.0 + (CGFloat(numberOfLines - 1) * ((textView.font?.lineHeight)! + 1.5));
+        } else if(numberOfLines <= 7){
+            let size = textView.sizeThatFits(CGSize(width: textView.frame.size.width, height: CGFloat.greatestFiniteMagnitude))
+            frameRect.size.height = size.height;
+        } else{
+            return
         }
         textAreaHeight.constant = frameRect.size.height
-        textView.frame = frameRect
+        self.textArea.frame = frameRect
+        if textArea.text!.characters.count > 0 {
+            let range = NSMakeRange(textArea.text!.characters.count - 1, 1)
+            textArea.scrollRangeToVisible(range);
+        }
     }
     
     func keyboardWillShow(notification: NSNotification) {
