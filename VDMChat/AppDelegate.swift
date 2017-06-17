@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import Firebase
+import Foundation
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
