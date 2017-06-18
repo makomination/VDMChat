@@ -125,8 +125,16 @@ class ChatBoardViewController: UIViewController, UITextViewDelegate, UITableView
     }
     
     func dismissKeyboard() {
-
         view.endEditing(true)
+    }
+    
+    @IBAction func ClickSendButton(_ sender: Any){
+        if let message = textArea.text{
+            textArea.text = "";
+            textViewDidChange(textArea);
+        }else{
+            return
+        }
     }
 
 }
