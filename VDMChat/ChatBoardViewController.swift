@@ -134,19 +134,29 @@ class ChatBoardViewController: UIViewController, UITextViewDelegate, UITableView
     
     @IBAction func ClickSendButton(_ sender: Any){
         if let message = textArea.text{
-            textArea.text = "";
-            textViewDidChange(textArea)
-            let rootRef = Database.database().reference(withPath: GeneralManager.REF_ROOT_STRING);
-            let chatInfoRef = rootRef.childByAutoId()
-            guard let nickname = GeneralManager.sharedInstance.nickname, !nickname.isEmpty else {
-                let chatInfo = ["message":message,"time":Date().timeIntervalSince1970,"nickname":"Anonymous"] as Any;
-                chatInfoRef.setValue(chatInfo);
-                return;
+            if(message.components(separatedBy: "\n").count > 8){
+                let alertController = UIAlertController(title: "iOScreator", message:
+                    "Please under 8 lines!", preferredStyle: UIAlertControllerStyle.alert)
+                alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
+                
+                self.present(alertController, animated: true, completion: nil)
+                return
             }
+            textArea.text = ""
+            textViewDidChange(textArea)
+            let rootRef = Database.database().reference(withPath: GeneralManager.REF_ROOT_STRING)
+            let chatInfoRef = rootRef.childByAutoId()
+            
+            guard let nickname = GeneralManager.sharedInstance.nickname, !nickname.isEmpty else {
+                let chatInfo = ["message":message,"time":Date().timeIntervalSince1970,"nickname":"Anonymous"] as Any
+                chatInfoRef.setValue(chatInfo)
+                return
+            }
+            
             let chatInfo = ["message":message,
                          "time":Date().timeIntervalSince1970,
-                         "nickname":nickname] as Any;
-            chatInfoRef.setValue(chatInfo);
+                         "nickname":nickname] as Any
+            chatInfoRef.setValue(chatInfo)
 
             
         }else{
