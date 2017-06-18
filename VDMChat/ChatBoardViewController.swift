@@ -25,6 +25,7 @@ class ChatBoardViewController: UIViewController, UITextViewDelegate, UITableView
         //table initialization
         table.dataSource = self
         table.delegate = self
+        table.estimatedRowHeight = 48
         table.rowHeight = UITableViewAutomaticDimension
 
         //textArea initialization
@@ -93,7 +94,8 @@ class ChatBoardViewController: UIViewController, UITextViewDelegate, UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let chatInfo = chatInfoArray[indexPath.row]
         let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "MessageCell")!
-        cell.textLabel?.text = chatInfo.nickname + ": " + chatInfo.message
+        let cellText = cell.contentView.viewWithTag(1) as! UILabel
+        cellText.text = chatInfo.nickname + ": " + chatInfo.message
         return cell
     }
     
