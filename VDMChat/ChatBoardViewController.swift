@@ -105,6 +105,17 @@ class ChatBoardViewController: UIViewController, UITextViewDelegate, UITableView
     }
     
     func textViewDidChange(_ textView: UITextView){
+        if(textView.text.components(separatedBy: "\n").count > 8){
+            let alertController = UIAlertController(title: "iOScreator", message:
+                "Please under 8 lines!", preferredStyle: UIAlertControllerStyle.alert)
+            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
+            
+            self.present(alertController, animated: true, completion: nil)
+            let truncated = textView.text.substring(to: textView.text.index(before: textView.text.endIndex))
+            textArea.text = truncated
+            return
+        }
+
         var frameRect:CGRect = textView.frame
         let size = textView.sizeThatFits(CGSize(width: textView.frame.size.width, height: CGFloat.greatestFiniteMagnitude))
         frameRect.size.height = size.height;
@@ -133,15 +144,7 @@ class ChatBoardViewController: UIViewController, UITextViewDelegate, UITableView
     }
     
     @IBAction func ClickSendButton(_ sender: Any){
-        if let message = textArea.text{
-            if(message.components(separatedBy: "\n").count > 8){
-                let alertController = UIAlertController(title: "iOScreator", message:
-                    "Please under 8 lines!", preferredStyle: UIAlertControllerStyle.alert)
-                alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
-                
-                self.present(alertController, animated: true, completion: nil)
-                return
-            }
+        if let message = textArea.text, !message.isEmpty{
             textArea.text = ""
             textViewDidChange(textArea)
             let rootRef = Database.database().reference(withPath: GeneralManager.REF_ROOT_STRING)
