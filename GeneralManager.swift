@@ -11,5 +11,6 @@ import Foundation
 class GeneralManager{
     static let sharedInstance: GeneralManager = GeneralManager();
     static let REF_ROOT_STRING = "chats"
+    static let ANONYMOUS = "Anonymous"
     var nickname:String?
 }

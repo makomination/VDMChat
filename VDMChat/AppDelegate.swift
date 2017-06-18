@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         // Use Firebase library to configure APIs
         FirebaseApp.configure()
-        NSLog("Firebase configured")
+        GeneralManager.sharedInstance.nickname = UserDefaults.standard.string(forKey: "nickname")
         return true
     }
 

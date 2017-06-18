@@ -148,7 +148,7 @@ class ChatBoardViewController: UIViewController, UITextViewDelegate, UITableView
             let chatInfoRef = rootRef.childByAutoId()
             
             guard let nickname = GeneralManager.sharedInstance.nickname, !nickname.isEmpty else {
-                let chatInfo = ["message":message,"time":Date().timeIntervalSince1970,"nickname":"Anonymous"] as Any
+                let chatInfo = ["message":message,"time":Date().timeIntervalSince1970,"nickname":GeneralManager.ANONYMOUS] as Any
                 chatInfoRef.setValue(chatInfo)
                 return
             }
