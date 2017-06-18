@@ -32,6 +32,8 @@ class ChatBoardViewController: UIViewController, UITextViewDelegate, UITableView
         textArea.textContainer.lineBreakMode = NSLineBreakMode.byWordWrapping
         textArea.textContainer.maximumNumberOfLines = 8
         textArea.isScrollEnabled = false
+        let tapForDissmissingKeyboard: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ChatBoardViewController.dismissKeyboard))
+        view.addGestureRecognizer(tapForDissmissingKeyboard)
         
         //initial setting of textArea's height
         var frameRect:CGRect = textArea.frame
@@ -39,7 +41,6 @@ class ChatBoardViewController: UIViewController, UITextViewDelegate, UITableView
         frameRect.size.height = size.height;
         textAreaHeight.constant = frameRect.size.height
         textArea.frame = frameRect
-
         
         //fetch data from Firebase
         let rootRef = Database.database().reference(withPath: GeneralManager.REF_ROOT_STRING);
@@ -122,6 +123,12 @@ class ChatBoardViewController: UIViewController, UITextViewDelegate, UITableView
             self.view.layoutIfNeeded()
         },completion: nil)
     }
+    
+    func dismissKeyboard() {
+
+        view.endEditing(true)
+    }
+
 }
 
 
