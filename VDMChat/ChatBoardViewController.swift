@@ -43,7 +43,7 @@ class ChatBoardViewController: UIViewController, UITextViewDelegate, UITableView
         textArea.frame = frameRect
         
         //fetch data from Firebase
-        let rootRef = Database.database().reference(withPath: GeneralManager.REF_ROOT_STRING);
+        let rootRef = Database.database().reference(withPath: GeneralManager.REF_ROOT_STRING)
         
         rootRef.observe(DataEventType.value, with: {snapshot in
             guard let snapshotValue = snapshot.value as? [String: AnyObject] else{
@@ -91,13 +91,15 @@ class ChatBoardViewController: UIViewController, UITextViewDelegate, UITableView
     
     //Required for UITableVIewDataSource protocol
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let chatInfo = chatInfoArray[indexPath.row]
         let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "MessageCell")!
+        cell.textLabel?.text = chatInfo.nickname + ": " + chatInfo.message
         return cell
     }
     
     //Required for UITableVIewDataSource protocol
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return chatInfoArray.count
     }
     
     func textViewDidChange(_ textView: UITextView){
@@ -131,7 +133,20 @@ class ChatBoardViewController: UIViewController, UITextViewDelegate, UITableView
     @IBAction func ClickSendButton(_ sender: Any){
         if let message = textArea.text{
             textArea.text = "";
-            textViewDidChange(textArea);
+            textViewDidChange(textArea)
+            let rootRef = Database.database().reference(withPath: GeneralManager.REF_ROOT_STRING);
+            let chatInfoRef = rootRef.childByAutoId()
+            guard let nickname = GeneralManager.sharedInstance.nickname, !nickname.isEmpty else {
+                let chatInfo = ["message":message,"time":Date().timeIntervalSince1970,"nickname":"Anonymous"] as Any;
+                chatInfoRef.setValue(chatInfo);
+                return;
+            }
+            let chatInfo = ["message":message,
+                         "time":Date().timeIntervalSince1970,
+                         "nickname":nickname] as Any;
+            chatInfoRef.setValue(chatInfo);
+
+            
         }else{
             return
         }
