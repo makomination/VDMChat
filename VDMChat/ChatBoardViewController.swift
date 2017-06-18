@@ -175,7 +175,7 @@ extension UITableView {
             if rows >= 0 {
                 let indexPath = IndexPath(row: rows, section: sections)
                 DispatchQueue.main.async { [weak self] in
-                    self?.scrollToRow(at: indexPath, at: .bottom, animated: true)
+                    self?.scrollToRow(at: indexPath, at: .bottom, animated: false)
                 }
             }
         }
