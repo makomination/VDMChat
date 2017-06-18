@@ -31,7 +31,15 @@ class ChatBoardViewController: UIViewController, UITextViewDelegate, UITableView
         textArea.delegate = self
         textArea.textContainer.lineBreakMode = NSLineBreakMode.byWordWrapping
         textArea.textContainer.maximumNumberOfLines = 8
-        textArea.isScrollEnabled = true
+        textArea.isScrollEnabled = false
+        
+        //initial setting of textArea's height
+        var frameRect:CGRect = textArea.frame
+        let size = textArea.sizeThatFits(CGSize(width: textArea.frame.size.width, height: CGFloat.greatestFiniteMagnitude))
+        frameRect.size.height = size.height;
+        textAreaHeight.constant = frameRect.size.height
+        textArea.frame = frameRect
+
         
         //fetch data from Firebase
         let rootRef = Database.database().reference(withPath: GeneralManager.REF_ROOT_STRING);
@@ -92,24 +100,11 @@ class ChatBoardViewController: UIViewController, UITextViewDelegate, UITableView
     }
     
     func textViewDidChange(_ textView: UITextView){
-        let numberOfLines = Int(textView.contentSize.height / (textView.font?.lineHeight)!)
         var frameRect:CGRect = textView.frame
-        
-        if (numberOfLines <= 1){
-            frameRect.size.height = 30.0
-            
-        } else if(numberOfLines <= 7){
-            let size = textView.sizeThatFits(CGSize(width: textView.frame.size.width, height: CGFloat.greatestFiniteMagnitude))
-            frameRect.size.height = size.height;
-        } else{
-            return
-        }
+        let size = textView.sizeThatFits(CGSize(width: textView.frame.size.width, height: CGFloat.greatestFiniteMagnitude))
+        frameRect.size.height = size.height;
         textAreaHeight.constant = frameRect.size.height
-        self.textArea.frame = frameRect
-        if textArea.text!.characters.count > 0 {
-            let range = NSMakeRange(textArea.text!.characters.count - 1, 1)
-            textArea.scrollRangeToVisible(range);
-        }
+        textArea.frame = frameRect
     }
     
     func keyboardWillShow(notification: NSNotification) {
