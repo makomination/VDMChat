@@ -1,7 +1,8 @@
 # Overview
 
 I took a screening test in June 2017. 
-This repository is my answer of the test. 
+This repository is my answer of the test.
+I created a simple chat app using firebase.
 The sentence of the test is in the last paragraph.
 
 # To Test by Yourself
