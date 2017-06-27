@@ -2,7 +2,7 @@
 
 I took a screening test in June 2017. 
 This repository is my answer of the test. 
-The sentence of the test is at the bottom.
+The sentence of the test is in the last paragraph.
 
 # To Test by Yourself
 ```
