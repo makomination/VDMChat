@@ -12,6 +12,7 @@ $ cd [Your VDMChat Directory]
 $ pod install
 $ open VDMChat.xcworkspace
 ```
+After Xcode opens, if you see "No Scheme" next to the stop button, please add a new scheme in which Target is "VDMChat".
 For details, go to see https://firebase.google.com/docs/ios/setup
 
 
