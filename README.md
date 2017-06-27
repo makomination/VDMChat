@@ -1,3 +1,17 @@
+I took a screening test in June 2017. 
+This repository is my answer of the test. 
+The sentence of the test is at the bottom.
+
+## To Test This App by Yourself
+'''
+$ cd *Your VDMChat directory*
+$ pod install
+$ open your-project.xcworkspace
+'''
+For details, go to see https://firebase.google.com/docs/ios/setup
+
+---- **The beginning of the test sentence** ----
+
 ## Chat App
 
 > In this test, you will be creating a chat app using [Firebase](https://firebase.google.com/docs/ios/setup), the app contains two views
@@ -23,3 +37,4 @@
 ### Demo
 <img src="./demo.gif" width="400px"/>
 
+---- **The end of the test sentence** ----
