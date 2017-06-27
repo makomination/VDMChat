@@ -6,6 +6,7 @@ I created a simple chat app using firebase.
 The sentence of the test is in the last paragraph.
 
 # To Test by Yourself
+On your terminal,
 ```
 $ cd [Your VDMChat Directory]
 $ pod install
