@@ -10,7 +10,7 @@ On your terminal,
 ```
 $ cd [Your VDMChat Directory]
 $ pod install
-$ open your-project.xcworkspace
+$ open VDMChat.xcworkspace
 ```
 For details, go to see https://firebase.google.com/docs/ios/setup
 
