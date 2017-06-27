@@ -6,7 +6,7 @@ The sentence of the test is in the last paragraph.
 
 # To Test by Yourself
 ```
-$ cd *Your VDMChat directory*
+$ cd [Your VDMChat Directory]
 $ pod install
 $ open your-project.xcworkspace
 ```
